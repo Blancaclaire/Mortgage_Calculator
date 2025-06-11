@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="../css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+
+        <div id="cart">
+
+            <div id="content">
+                <form>
+                    <section id="head">
+
+                        <p class="title">Mortgage Calculator</p>
+                        <button class="clear">Clear All</button>
+
+                    </section>
+
+                    <section id="data">
+                        <div class="amount">
+                            <label for="mortgageAmount">Mortgage Amount</label>
+                            <input type="number" id="mortgageAmount" name="mortgageAmount">
+                        </div>
+
+                        <div class="MortgageTerm">
+                            <label for="mortgageTerm">Mortgage Term</label>
+                            <input type="number" min="0" max="100" id="mortgageTerm" name="mortgageTerm">
+                        </div>
+
+                        <div class="MortgageType">
+                            <label>
+                                <input type="radio" name="option" value="Repayment"> Repayment
+                            </label>
+                            <label>
+                                <input type="radio" name="option" value="Repayment"> Interest Only
+                            </label>
+
+                        </div>
+                    </section>
+
+                    <section id="Calculator">
+                        <button>Calculate Repayments</button>
+                    </section>
+
+
+
+                </form>
+            </div>
+
+            <div id="result">
+                <div class="result-content">
+                    <img src="../images/illustration-empty.svg">
+                    <p class="result-title">Results shown here</p>
+                    <p class="result-subtitle">Complete the form and click "calculate repayments" to
+                        see what your monthly repayments would be.
+                    </p>
+
+                </div>
+                <div class="result-content active">
+
+
+                </div>
+            </div>
+
+        </div>
+        
+    </main>
+
+</body>
+
+</html>

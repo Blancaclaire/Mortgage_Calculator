@@ -1,0 +1,56 @@
+/* FUENTES */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background:#e1f2fa;
+    font-family:"Plus Jakarta Sans", sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#cart{
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    max-width: 70vw;
+    min-height: 50vh;
+    flex-direction: row;
+    overflow: hidden;
+
+    
+}
+
+#content{
+    display: flex;
+    width: 50%;
+}
+
+#result{
+    display: flex;
+    width: 50%;
+    background-color: #143040; 
+    color: white;
+    align-items: center; 
+    padding: 30px;
+    border-bottom-left-radius: 40px;
+    text-align: center;
+    
+}
+
+#result img{
+    width: 8em;
+
+}
+
