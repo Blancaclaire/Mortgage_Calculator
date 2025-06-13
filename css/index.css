@@ -2,55 +2,208 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
-    background:#e1f2fa;
-    font-family:"Plus Jakarta Sans", sans-serif;
+body {
+    background: #e1f2fa;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-#cart{
+#card {
     display: flex;
     background: white;
     border-radius: 15px;
     max-width: 70vw;
-    min-height: 50vh;
-    flex-direction: row;
+    min-height: 50%;
     overflow: hidden;
 
-    
+
 }
 
-#content{
+#content {
     display: flex;
     width: 50%;
+    padding: 30px;
+    flex-direction: column;
 }
 
-#result{
+/* Result *************************/
+
+#result {
     display: flex;
     width: 50%;
-    background-color: #143040; 
+    background-color: #143040;
     color: white;
-    align-items: center; 
+    align-items: center;
     padding: 30px;
     border-bottom-left-radius: 40px;
     text-align: center;
+
+
+}
+
+#result img {
+    width: clamp(8em, 9vw, 17em);
+    margin-bottom: 1em;
+}
+
+.result-title {
+    font-weight: 500;
+}
+
+.result-subtitle {
+    color: #99b6b9;
+    margin-top: 1em;
+    font-size: clamp(0.7rem, 0.7vw, 1.5rem);
+
+}
+
+/* Form*************************************/
+
+
+#content label {
+    color: #838c8d;
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+    border-radius: 5px;
+}
+
+
+/* Estilos generales input*/
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+input:hover{
+    border: 2px solid #cdd242;
+}
+
+
+/* Ocultar flechas del input number */
+#content input::-webkit-outer-spin-button,
+#content input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#content input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* head*************************************/
+.title {
+    font-weight: 650;
+    margin-bottom: 1.2em;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+}
+
+#head button {
+    border: none;
+    background: none;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #838c8d;
+
+}
+
+#head button:hover {
+    text-decoration: underline;
+    transition-duration: 2ms;
+}
+
+/* amount ****************************************/
+
+.input-wrapper {
     
-}
-
-#result img{
-    width: 8em;
+    position: relative;
+    width: 100%;
 
 }
 
+/* £ */
+.input-symbol {
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 7px 8px;
+    background-color: #e1f2fa;
+    color: #555555;
+    font-weight: 600;
+}
+
+.amount input{
+padding-left: 40px;
+}
+
+
+/* term-interest */
+
+.term-interest{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10%;
+
+}
+
+.term, .interest {
+    flex: 1;
+}
+
+
+@media(max-width: 600px) {
+
+
+    main{
+        align-items: normal;
+    }
+    #card {
+        flex-direction: column;
+        max-width: 100vw;
+        border-radius: 0px;
+    }
+
+    #content {
+        width: 100%;
+
+    }
+
+    #result {
+        width: 100%;
+
+        border-bottom-left-radius: 0px;
+    }
+
+
+    #head{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2em;
+    }
+
+    .term-interest{
+        flex-direction: column;
+    }
+
+
+}

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Calculator</title>
     <link rel="stylesheet" href="../css/index.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -16,7 +15,7 @@
 <body>
     <main>
 
-        <div id="cart">
+        <div id="card">
 
             <div id="content">
                 <form>
@@ -30,12 +29,33 @@
                     <section id="data">
                         <div class="amount">
                             <label for="mortgageAmount">Mortgage Amount</label>
-                            <input type="number" id="mortgageAmount" name="mortgageAmount">
+
+                            <div class="input-wrapper">
+                                <span class="input-symbol">£</span>
+                                <input type="number" id="mortgageAmount" name="mortgageAmount">
+
+                            </div>
+
                         </div>
 
-                        <div class="MortgageTerm">
-                            <label for="mortgageTerm">Mortgage Term</label>
-                            <input type="number" min="0" max="100" id="mortgageTerm" name="mortgageTerm">
+                        <div class="term-interest">
+                            <div class="term">
+                                <label for="mortgageTerm">Mortgage Term</label>
+                                <div class="input-wrapper">
+                                    <input type="number" min="0" max="100" id="mortgageTerm" name="mortgageTerm">
+                                    <span class="input-symbol">years</span>
+                                </div>
+
+                            </div>
+
+                            <div class="interest">
+                                <label for="mortgageInterest">Interest Rate</label>
+                                <div class="input-wrapper">
+                                    <input type="number" min="0" max="100" id="mortgageInterest"
+                                        name="mortgageInterest">
+                                    <span class="input-symbol">%</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="MortgageType">
@@ -74,7 +94,7 @@
             </div>
 
         </div>
-        
+
     </main>
 
 </body>
