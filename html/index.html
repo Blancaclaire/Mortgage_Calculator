@@ -31,8 +31,9 @@
                             <label for="mortgageAmount">Mortgage Amount</label>
 
                             <div class="input-wrapper">
-                                <span class="input-symbol">£</span>
+                                
                                 <input type="number" id="mortgageAmount" name="mortgageAmount">
+                                <span class="input-symbol">£</span>
 
                             </div>
 
@@ -59,13 +60,17 @@
                         </div>
 
                         <div class="MortgageType">
-                            <label>
-                                <input type="radio" name="option" value="Repayment"> Repayment
-                            </label>
-                            <label>
-                                <input type="radio" name="option" value="Repayment"> Interest Only
-                            </label>
+                            <label>Mortgage Type</label>
 
+                            <div class="input-type">
+                                <input type="radio" name="option" id="mortgageType-r" value="Repayment"> 
+                                <label class="title-type">Repayment</p>
+                            </div>
+
+                            <div class="input-type">                                
+                                <input type="radio" name="option" id="mortgageType-i" value="Repayment"> 
+                                <label class="title-type">Interest Only</p>
+                            </div>
                         </div>
                     </section>
 
