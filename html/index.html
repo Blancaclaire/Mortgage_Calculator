@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
+
+        <script src="../js/index.js"></script>
 </head>
 
 <body>
@@ -75,7 +77,7 @@
                     </section>
 
                     <section id="Calculator">
-                        <button>
+                        <button id="subB">
                             <img src="../images/icon-calculator.svg">
                             Calculate Repayments
                         </button>
@@ -89,20 +91,18 @@
             </div>
 
             <div id="result">
-                <!-- 
-                <div class="result-content">
+
+                <div class="result-content active" id="empty-result">
                     <img src="../images/illustration-empty.svg">
                     <p class="result-title">Results shown here</p>
                     <p class="result-subtitle">Complete the form and click "calculate repayments" to
                         see what your monthly repayments would be.
                     </p>
 
-                </div>  -->
+                </div>
 
-
-
-
-                <div class="result-content active">
+                  
+                <div class="result-content " id="real-result">
                     <p class="result-title">Your results</p>
                     <p class="result-subtitle">
 
