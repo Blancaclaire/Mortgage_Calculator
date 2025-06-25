@@ -36,8 +36,9 @@
 
                                 <input type="number" id="mortgageAmount" name="mortgageAmount">
                                 <span class="input-symbol">£</span>
-
+                                <p class="errorMessaje">This field is required</p>
                             </div>
+                            
 
                         </div>
 
@@ -47,8 +48,9 @@
                                 <div class="input-wrapper">
                                     <input type="number" min="0" max="100" id="mortgageTerm" name="mortgageTerm">
                                     <span class="input-symbol">years</span>
+                                    <p class="errorMessaje">This field is required</p>
                                 </div>
-
+                                
                             </div>
 
                             <div class="interest">
@@ -57,7 +59,9 @@
                                     <input type="number" step="0.01" min="0" max="100" id="mortgageInterest"
                                         name="mortgageInterest">
                                     <span class="input-symbol">%</span>
+                                    <p class="errorMessaje">This field is required</p>
                                 </div>
+                                
                             </div>
                         </div>
 
@@ -70,9 +74,11 @@
                             </div>
 
                             <div class="input-type">
-                                <input type="radio" name="option" id="mortgageType-i" class="mortgagetype" value="Repayment">
+                                <input type="radio" name="option" id="mortgageType-i" class="mortgagetype" value="Interest Only">
                                 <label for="mortgageType-i">Interest Only</label>
                             </div>
+
+                            <p class="errorMessaje">This field is required</p>
                         </div>
                     </section>
 
