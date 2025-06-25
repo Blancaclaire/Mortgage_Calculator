@@ -37,11 +37,11 @@ function calculator() {
     console.log('La cantidad es ' + InterestRate);
 
     const MortgageType = document.querySelector('.mortgagetype:checked');
-    
-    if(MortgageType){
-    console.log('el tipo es ' + MortgageType.value);
+
+    if (MortgageType) {
+        console.log('el tipo es ' + MortgageType.value);
     }
-    else{
+    else {
         console.warn('El input mortgageInterest no existe en el DOM');
     }
 }
@@ -49,13 +49,15 @@ function calculator() {
 
 function visibilityControl() {
 
-
+    let isCompleted = true;
     const wrappers = document.querySelectorAll('.input-wrapper');
 
     wrappers.forEach(wrapper => {
+
         const input = wrapper.querySelector('input');
         const symbol = wrapper.querySelector('.input-symbol');
         const errorM = wrapper.querySelector('.errorMessaje');
+
 
         if (input.value.trim() === "") {
             symbol.classList.add('empty');
@@ -63,16 +65,25 @@ function visibilityControl() {
             errorM.classList.add('active');
 
         }
+        else {
+            symbol.classList.remove('empty');
+            input.classList.remove('empty');
+            errorM.classList.remove('active');
+        }
+
+
     });
+
 
     // input MortgageType
     const InputType = document.querySelector('.mortgagetype:checked');
     const Mortgagetype = document.querySelector('.MortgageType');
     const errorMT = Mortgagetype.querySelector('.errorMessaje');
     if (!InputType) {
-        console.log('que pasooooo')
         errorMT.classList.add('active');
     }
-
+    else {
+        errorMT.classList.remove('active');
+    }
 }
 
