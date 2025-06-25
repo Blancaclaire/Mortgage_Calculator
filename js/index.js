@@ -32,13 +32,17 @@ function calculator() {
     const MortgageTerm = document.getElementById('mortgageTerm').value;
     console.log('La cantidad es ' + MortgageTerm);
 
-    try {
-        const InterestRate = document.getElementById('mortgageInterest').value;
-        console.log('La cantidad es ' + InterestRate);
-    }
 
-    catch {
-        console.log(errorM)
+    const InterestRate = document.getElementById('mortgageInterest').value;
+    console.log('La cantidad es ' + InterestRate);
+
+    const MortgageType = document.querySelector('.mortgagetype:checked');
+    
+    if(MortgageType){
+    console.log('el tipo es ' + MortgageType.value);
+    }
+    else{
+        console.warn('El input mortgageInterest no existe en el DOM');
     }
 }
 
@@ -60,10 +64,14 @@ function visibilityControl() {
 
         }
     });
-    
+
+    // input MortgageType
     const InputType = document.querySelector('.mortgagetype:checked');
-    if(!InputType){
+    const Mortgagetype = document.querySelector('.MortgageType');
+    const errorMT = Mortgagetype.querySelector('.errorMessaje');
+    if (!InputType) {
         console.log('que pasooooo')
+        errorMT.classList.add('active');
     }
 
 }
