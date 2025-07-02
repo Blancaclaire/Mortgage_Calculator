@@ -8,43 +8,89 @@ function changeContent() {
     const preview = document.getElementById('empty-result');
     const realResult = document.getElementById('real-result');
     const submitButtomn = document.getElementById('subB');
-    const form = document.getElementById('mortgage-form');
-
+    
     submitButtomn.addEventListener('click', function (event) {
         event.preventDefault();
-        preview.classList.remove('active');
-        realResult.classList.add('active');
 
-        calculator();
         visibilityControl();
-
-        // form.submit();
+        calculator();
     });
 
 }
 
+
+
 function calculator() {
 
-
     const MortgageAmount = document.getElementById('mortgageAmount').value;
-    console.log('La cantidad es ' + MortgageAmount);
-
     const MortgageTerm = document.getElementById('mortgageTerm').value;
-    console.log('La cantidad es ' + MortgageTerm);
-
-
     const InterestRate = document.getElementById('mortgageInterest').value;
-    console.log('La cantidad es ' + InterestRate);
-
     const MortgageType = document.querySelector('.mortgagetype:checked');
 
-    if (MortgageType) {
-        console.log('el tipo es ' + MortgageType.value);
+
+    if (MortgageType && MortgageAmount && MortgageTerm && InterestRate) {
+
+        //Cambia Result en caso de que esten todos los datos
+        const preview = document.getElementById('empty-result');
+        const realResult = document.getElementById('real-result');
+
+        preview.classList.remove('active');
+        realResult.classList.add('active');
+
+        //Declaracion de variables
+        let P = Number(MortgageAmount);//Cantidad del prestamo
+        let r = (Number(InterestRate / 100) / 12);//Interes mensual
+        let n = Number(MortgageTerm * 12);//numero total de pagos
+        let M; //Pago Mensual 
+        let T; //Total a pagar durante el plazo
+
+        if (MortgageType.value.trim() === "Repayment") {
+
+            M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            T = M * n;
+            console.log('El pago mensual es : ' + M.toFixed(2));
+            console.log('El total es : ' + T.toFixed(2));
+
+        }
+        else {
+
+            M = P * r;
+            T = (M * n) + P;
+            console.log('El pago mensual es : ' + M.toFixed(2));
+            console.log('El total es : ' + T.toFixed(2));
+        }
+
+
+        showResults(M, T);
+
     }
+
     else {
-        console.warn('El input mortgageInterest no existe en el DOM');
+        console.warn('falta algun input en el DOM');
     }
-}
+};
+
+function showResults(M, T) {
+
+    let Month = document.querySelector('.monthly');
+
+    Month.innerHTML = `
+        <p class="result-subtitle">
+        Your monthly repayments
+        </p>
+        <span class="coin">£</span>
+        <span class="quantity"=>${M.toFixed(2)}</span>
+    `
+
+    let total = document.querySelector('.total');
+    total.innerHTML = `
+        <p class="result-subtitle">
+        Total you´ll repay over the term
+         </p>
+        <span class="coin">£</span>
+        <span class="quantity">${T.toFixed(2)}</span>`
+
+};
 
 
 function visibilityControl() {

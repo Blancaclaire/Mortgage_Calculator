@@ -369,7 +369,7 @@ input:focus+.input-symbol {
         align-items: normal;
         flex-direction: column;
         height: auto;
-
+        padding: 0;
     }
 
     #card {
