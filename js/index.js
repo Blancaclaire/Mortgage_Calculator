@@ -1,20 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
     changeContent();
 
+    const MortgageAmount = document.getElementById('mortgageAmount');
+
+
 });
 
 
 function changeContent() {
-    const preview = document.getElementById('empty-result');
-    const realResult = document.getElementById('real-result');
+
     const submitButtomn = document.getElementById('subB');
-    
+    const ClearAllButton = document.querySelector('.clear');
+    const form = document.getElementById('mortgage-form');
+
     submitButtomn.addEventListener('click', function (event) {
         event.preventDefault();
 
         visibilityControl();
         calculator();
+
     });
+
+    ClearAllButton.addEventListener('click', function () {
+        form.submit();
+    })
+
 
 }
 
@@ -26,6 +36,8 @@ function calculator() {
     const MortgageTerm = document.getElementById('mortgageTerm').value;
     const InterestRate = document.getElementById('mortgageInterest').value;
     const MortgageType = document.querySelector('.mortgagetype:checked');
+
+
 
 
     if (MortgageType && MortgageAmount && MortgageTerm && InterestRate) {
@@ -45,15 +57,20 @@ function calculator() {
         let T; //Total a pagar durante el plazo
 
         if (MortgageType.value.trim() === "Repayment") {
-
-            M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-            T = M * n;
-            console.log('El pago mensual es : ' + M.toFixed(2));
-            console.log('El total es : ' + T.toFixed(2));
-
+            if (r === 0) {
+                // Caso especial: sin interés
+                M = P / n;
+                T = P;
+            }
+            else {
+                M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                T = M * n;
+                console.log('El pago mensual es : ' + M.toFixed(2));
+                console.log('El total es : ' + T.toFixed(2));
+            }
         }
         else {
-
+            //Interest Only
             M = P * r;
             T = (M * n) + P;
             console.log('El pago mensual es : ' + M.toFixed(2));
@@ -132,4 +149,3 @@ function visibilityControl() {
         errorMT.classList.remove('active');
     }
 }
-

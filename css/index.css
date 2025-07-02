@@ -39,7 +39,7 @@ main {
     display: flex;
     width: 50%;
     /* Si el contenido es más añto que el contenedor, muestra una barar de scroll vertical */
-    overflow-y: auto; 
+    overflow-y: auto;
     padding: clamp(1rem, 4vw, 2rem);
     flex-direction: column;
 }
@@ -51,7 +51,7 @@ main {
     width: 50%;
     background-color: #143040;
     color: white;
-    padding: clamp(1rem, 4vw, 2rem);
+    padding: clamp(1rem, 6vw, 2rem);
     border-bottom-left-radius: 60px;
 
 }
@@ -70,19 +70,21 @@ main {
 .result-content.active img {
     width: clamp(9em, 9vw, 17em);
     margin-bottom: 1em;
+        
 }
 
 .result-title {
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0 !important;
-    padding-bottom: 10px;
+    padding-bottom: 0.5em;
 }
 
 .result-subtitle {
     color: #99b6b9;
-    font-size: clamp(0.9rem, 0.7vw, 1.5rem);
-
+    font-size: clamp(0.7rem, 0.7vw, 1.5rem);
+    line-height: 23px;
+    
 }
 
 /* result-content  */
@@ -113,7 +115,7 @@ main {
     flex-direction: column;
     margin-top: 2em;
     background-color: #0c1d27;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     width: 100%;
     border-radius: 8px;
     border-top: 3px solid #cdd242;
@@ -194,7 +196,7 @@ input.empty {
     transform: translateY(-33.33%);
 }
 
-input:focus+.input-symbol.input-symbol.empty{
+input:focus+.input-symbol.input-symbol.empty {
     background-color: red;
 }
 
@@ -258,7 +260,7 @@ input:focus+.input-symbol {
     transform: translateY(-50%);
     padding: 9px 13px;
     background-color: #e1f2fa;
-    color: #555555;
+    color: #2b5872;
     font-weight: 600;
 }
 
@@ -382,13 +384,14 @@ input:focus+.input-symbol {
 
     #content {
         width: 100%;
-        overflow-y: none; 
+        overflow-y: none;
 
     }
 
     #result {
         width: 100%;
         border-bottom-left-radius: 0px;
+        flex-direction: column;
 
     }
 
